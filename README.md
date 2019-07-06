@@ -1,5 +1,4 @@
-# VIOLET IS A WORK IN PROGRESS
+# VIOLET
 
 
-
-Thanks for your patience.
+Violet is still a work in progress. Check back soon! 
