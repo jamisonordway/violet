@@ -1,0 +1,2 @@
+class Freewrite < ApplicationRecord
+end
