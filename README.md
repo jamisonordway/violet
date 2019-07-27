@@ -1,9 +1,11 @@
-# VIOLET
+# VIOLET, SONGWRITING COACH
 
 
 Violet is still a work in progress. Check back soon! 
 
 _Vision: Violet is your personal songwriting assistant. She will recommend strategies to turn your ideas into songs, and ping you regularly to help establish a discipline around writing._
+
+[Check out Violet on Heroku!](https://violet-songwriting-coach.herokuapp.com/)
 
 Immediate next steps: 
 
