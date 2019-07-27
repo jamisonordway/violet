@@ -7,11 +7,12 @@ _Vision: Violet is your personal songwriting assistant. She will recommend strat
 
 Immediate next steps: 
 
-* Correct the React bug that causes main component to render twice.
-  - FreewritesController#index is being called twice from the Rails API. Figure out why this is happening.
+* Configure CORS to accept POST/PATCH/DELETE requests.
 
-* Complete Devise implementation for authentication/authorization.
+* Devise implementation for authentication/authorization.
 
 * Extract Freewriting Entry functionality to it's own page, and style the homepage.
 
 * Add routes and Redux.
+
+* Add pages for completed sections and songs.
