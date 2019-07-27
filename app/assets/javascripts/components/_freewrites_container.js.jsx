@@ -15,7 +15,6 @@ class FreewritesContainer extends React.Component {
     let body = JSON.stringify({
       freewrite: { title: title, text: text }
     });
-    console.log(body);
 
     fetch("http://localhost:3000/api/v1/freewrites", {
       method: "POST",
@@ -36,7 +35,6 @@ class FreewritesContainer extends React.Component {
     this.setState({
       freewrites: this.state.freewrites.concat(freewrite)
     });
-    console.log("added an entry")
   }
 
   handleDelete(id) {
@@ -46,7 +44,6 @@ class FreewritesContainer extends React.Component {
         "Content-Type": "application/json"
       }
     }).then(response => {
-      console.log("Freewrite was deleted!");
       this.deleteFreewrite(id);
     });
   }
@@ -81,7 +78,6 @@ class FreewritesContainer extends React.Component {
   componentDidMount() {
     fetch("/api/v1/freewrites.json")
       .then(response => {
-        console.log(response)
         return response.json();
       })
       .then(data => {
@@ -92,8 +88,11 @@ class FreewritesContainer extends React.Component {
     return (
       <div>
         <h2>Add new Freewriting Entry</h2>
+        <p>Freewriting is a great way to get all of your ideas out of your head for future refinement.</p>
+        <p>Try to spend at least 10 minutes per day filling this log with stream-of-consciousness writing.</p>
+        <p>Optional: start with a prompt!</p>
         <NewFreewrite handleFormSubmit={this.handleFormSubmit} />
-        <h2>All Freewriting Entries </h2>
+        <h2>All Freewriting Entries</h2>
         <AllFreewrites
           freewrites={this.state.freewrites}
           handleDelete={this.handleDelete}

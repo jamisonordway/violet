@@ -25,19 +25,19 @@ class Freewrite extends React.Component {
       <input
         type="text"
         ref={input => (this.title = input)}
-        defaultValue={this.props.freewrite.title}
+        defaultValue={this.props.freewrite.freewrite_title}
       />
     ) : (
-      <h3>{this.props.freewrite.title}</h3>
+      <h3>{this.props.freewrite.freewrite_title}</h3>
     );
     let text = this.state.editable ? (
       <input
         type="text"
         ref={input => (this.text = input)}
-        defaultValue={this.props.freewrite.text}
+        defaultValue={this.props.freewrite.freewrite_body}
       />
     ) : (
-      <p>{this.props.freewrite.text}</p>
+      <p>{this.props.freewrite.freewrite_body}</p>
     );
     return (
       <div
