@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  root to: 'pages#homepage'
+  root to: "home#index"
 
   resources :sessions, only: [:create, :destroy]
+
+  namespace :api do 
+    namespace :v1 do
+      resources :freewrites, only: [:index, :create, :destroy, :update]
+    end
+  end
 
   as :user do
     get 'sign_in', :to => 'devise/sessions#new', as: "login"
