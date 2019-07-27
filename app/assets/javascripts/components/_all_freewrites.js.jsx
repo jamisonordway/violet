@@ -1,5 +1,6 @@
 class AllFreewrites extends React.Component {
   render() {
+    console.log(this)
     var freewrites = this.props.freewrites.map(freewrite => {
       return (
         <div key={freewrite.id}>
