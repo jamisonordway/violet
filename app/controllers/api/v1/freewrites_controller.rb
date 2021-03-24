@@ -4,7 +4,7 @@ class Api::V1::FreewritesController < ApplicationController
   end
 
   def create
-    freewrite = Freewrite.create(freewrite)
+    freewrite = Freewrite.create(title: params[:title], description: params[:text])
     render json: freewrite
   end
 
