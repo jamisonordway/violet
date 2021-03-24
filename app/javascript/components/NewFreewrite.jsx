@@ -1,3 +1,5 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const NewFreewrite = props => {
   let formFields = {};
@@ -27,3 +29,5 @@ const NewFreewrite = props => {
     </form>
   );
 };
+
+export default NewFreewrite;

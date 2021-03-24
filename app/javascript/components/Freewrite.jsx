@@ -1,3 +1,6 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+
 class Freewrite extends React.Component {
   constructor(props) {
     super(props);
@@ -63,3 +66,12 @@ class Freewrite extends React.Component {
     );
   }
 }
+
+Freewrite.propTypes = {
+  title: PropTypes.string,
+  text: PropTypes.string,
+  handleDelete: PropTypes.func,
+  handleUpdate: PropTypes.func
+}
+
+export default Freewrite;

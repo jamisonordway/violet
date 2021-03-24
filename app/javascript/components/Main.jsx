@@ -1,3 +1,7 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import FreewritesContainer from '../components/FreewritesContainer';
+
 const styles = {
   margin: "1em",
   padding: "1em",
@@ -14,3 +18,5 @@ const Main = props => {
     </div>
   );
 };
+
+export default Main;

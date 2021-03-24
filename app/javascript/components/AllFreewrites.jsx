@@ -1,3 +1,7 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import Freewrite from '../components/Freewrite';
+
 class AllFreewrites extends React.Component {
   render() {
     var freewrites = this.props.freewrites.map(freewrite => {
@@ -5,8 +9,8 @@ class AllFreewrites extends React.Component {
         <div key={freewrite.id}>
           <Freewrite
             freewrite={freewrite}
-            freewrite_title={freewrite.title}
-            freewrite_text={freewrite.description}
+            title={freewrite.title}
+            text={freewrite.description}
             handleDelete={this.props.handleDelete}
             handleUpdate={this.props.handleUpdate}
             />
@@ -18,3 +22,5 @@ class AllFreewrites extends React.Component {
     return <div>{freewrites}</div>;
   }
 }
+
+export default AllFreewrites;

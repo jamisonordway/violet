@@ -1,3 +1,8 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import AllFreewrites from '../components/AllFreewrites';
+import NewFreewrite from '../components/NewFreewrite';
+
 class FreewritesContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -102,3 +107,5 @@ class FreewritesContainer extends React.Component {
     );
   }
 }
+
+export default FreewritesContainer;
