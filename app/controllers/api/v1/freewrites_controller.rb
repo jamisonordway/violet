@@ -14,9 +14,10 @@ class Api::V1::FreewritesController < ApplicationController
 
   def update
     freewrite = Freewrite.find(params[:id])
-    freewrite.update(freewrite_title: params[:freewrite][:title])
-    freewrite.update(freewrite_body: params[:freewrite][:text])
-    require 'pry'; binding.pry
+
+    freewrite.update(title: params[:freewrite][:title])
+    freewrite.update(description: params[:freewrite][:text])
+
     render json: freewrite
   end
 
