@@ -1,0 +1,16 @@
+{
+  "application.js": "/packs/js/application-4ff5d44c97bfc25c168a.js",
+  "entrypoints": {
+    "application": {
+      "assets": {
+        "js": [
+          "/packs/js/runtime-3ccfd93c935954235fc6.js",
+          "/packs/js/application-4ff5d44c97bfc25c168a.js"
+        ]
+      }
+    }
+  },
+  "js/application-4ff5d44c97bfc25c168a.js.map": "/packs/js/application-4ff5d44c97bfc25c168a.js.map",
+  "js/runtime-3ccfd93c935954235fc6.js.map": "/packs/js/runtime-3ccfd93c935954235fc6.js.map",
+  "runtime.js": "/packs/js/runtime-3ccfd93c935954235fc6.js"
+}
