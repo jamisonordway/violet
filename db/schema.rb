@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_24_225521) do
+ActiveRecord::Schema.define(version: 2021_08_03_133228) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2021_03_24_225521) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "body"
     t.index ["user_id"], name: "index_freewrites_on_user_id"
   end
 
@@ -46,19 +47,32 @@ ActiveRecord::Schema.define(version: 2021_03_24_225521) do
   create_table "profiles", force: :cascade do |t|
   end
 
+  create_table "progressions", force: :cascade do |t|
+    t.bigint "section_id"
+    t.string "description"
+    t.text "content"
+    t.index ["section_id"], name: "index_progressions_on_section_id"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string "title"
     t.string "description"
   end
 
   create_table "sections", force: :cascade do |t|
-    t.string "section_label"
-    t.string "section_body"
+    t.bigint "song_id"
+    t.integer "label"
+    t.string "type"
+    t.text "lyrics"
+    t.index ["song_id"], name: "index_sections_on_song_id"
   end
 
   create_table "songs", force: :cascade do |t|
     t.string "title"
-    t.string "lyrics"
+    t.string "message"
+    t.string "mood"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_songs_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -74,4 +88,7 @@ ActiveRecord::Schema.define(version: 2021_03_24_225521) do
   end
 
   add_foreign_key "freewrites", "users"
+  add_foreign_key "progressions", "sections"
+  add_foreign_key "sections", "songs"
+  add_foreign_key "songs", "users"
 end
