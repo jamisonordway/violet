@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get '/', to: 'home#index'
+  get '/', to: 'dashboard#index'
 
   namespace :api do
     namespace :v1 do
@@ -7,7 +7,11 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :freewrites, only: [:index, :new]
+  resources :sections, only: :index
+  resources :songs, only: :index
+
   devise_for :users, controllers: {
-    sessions: 'users/sessions'
+    sessions: 'users/sessions',
   }
 end

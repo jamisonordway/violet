@@ -4,13 +4,16 @@ const styles = {
   border: "1px solid #ddd"
 };
 
-const Main = props => {
+const Dashboard = props => {
+  console.log(props);
   return (
     <div style={styles}>
       <center>
-        <h1>Violet -- Freewriting sessions </h1>
+        <h1>Violet, your songwriting assistant</h1>
       </center>
-      <FreewritesContainer />
+      <Statistics
+        email={props.user.email}
+      />
     </div>
   );
 };

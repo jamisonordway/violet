@@ -1,11 +1,19 @@
 class Api::V1::FreewritesController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   def index
     render json: Freewrite.all
   end
 
   def create
-    freewrite = Freewrite.create(title: params[:title], description: params[:text])
-    render json: freewrite
+    freewrite = current_user.freewrites.create(
+      title: freewrite_params[:title],
+      description: freewrite_params[:text]
+    )
+
+    respond_to do |format|
+      format.json { redirect_to freewrites_path }
+    end
   end
 
   def destroy
@@ -23,7 +31,7 @@ class Api::V1::FreewritesController < ApplicationController
 
   private
 
-  def article_params
+  def freewrite_params
     params.require(:freewrite).permit(:id, :title, :text)
   end
 end
