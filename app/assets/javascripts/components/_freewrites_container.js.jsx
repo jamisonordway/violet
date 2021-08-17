@@ -87,14 +87,9 @@ class FreewritesContainer extends React.Component {
   render() {
     return (
       <div>
-        <h2>Add new Freewriting Entry</h2>
-        <p>Freewriting is a great way to get all of your ideas out of your head for future refinement.</p>
-        <p>Try to spend at least 10 minutes per day filling this log with stream-of-consciousness writing.</p>
-        <p>Optional: start with a prompt!</p>
-        <NewFreewrite handleFormSubmit={this.handleFormSubmit} />
-        <h2>All Freewriting Entries</h2>
+        <h2>All Entries</h2>
         <AllFreewrites
-          freewrites={this.state.freewrites}
+          freewrites={this.props.freewrites}
           handleDelete={this.handleDelete}
           handleUpdate={this.handleUpdate}
         />
